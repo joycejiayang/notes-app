@@ -13,28 +13,26 @@
 
 body {
     background-color: black;
-    position: relative;
     font-family: "Be Vietnam Pro", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
 }
 
 article#screen {
     background-color: var(--pale-purple);
-    max-width: 393px;
-    max-height: 852px;
-    width: 80vw;
-    height: 80vh;
+    width: clamp(320px, 80vw, 440px);
+    height: clamp(568px, 80vh, 956px);
     display: block;
     position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    overflow: auto;
+    overflow-y: scroll;
 }
 
 div#content {
-    display: flex;
-    flex-direction: column;
-    padding: 1.938rem 1.25rem;
-    gap: 1rem;
+    padding: 1.938rem 1.25rem 1.25rem;
 }
 
 div#content * {
@@ -46,34 +44,90 @@ h1#page-title {
     line-height: 1.938rem;
     font-size: 1.938rem;
     color: var(--dark-gray);
+    padding-bottom: 1.25rem;
+}
+
+#all-notes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.938rem;
 }
 
 .note-entry {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
     background-color: white;
     padding: 1.25rem;
     border-radius: 1.375rem;
+    position: relative;
 }
 
 .note-entry .note-title {
-    width: 12.5rem;
-    font-size: 1.063rem;
+    width: 11.875rem;
+    font-size: 1.188rem;
+    line-height: 1.563rem;
+    padding-bottom: 0.938rem;
+}
+
+.note-entry .stars {
+    position: absolute;
+    top: 0.938rem;
+    right: 0.938rem;
+}
+
+.note-entry .note-preview {
+    font-size: 0.938rem;
     line-height: 1.313rem;
-    margin: 0;
+    width: 18.75rem;
+    max-width: calc(clamp(320px, 80vw, 440px) - 1.25rem - 1.25rem - 1.25rem - 1.25rem);
+}
+
+.note-preview ol {
+    padding-inline-start: 1.25rem;
 }
 
 .note-entry .time {
     font-size: 0.813rem;
     line-height: 0.813rem;
+    padding-top: 0.938rem;
+    color: var(--dark-gray);
 }
 
-footer {
+#nav-offset {
+    padding: 1.25rem 4.375rem 0;
+    width: auto;
+    height: calc(6.563rem - 1.25rem);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.25rem 4.375rem 0;
     background-color: var(--dark-blue);
-    width: 100%;
-    height: 6.563rem;
-    top: calc(100% - 6.563rem);
+    width: calc(clamp(320px, 80vw, 440px) - 4.375rem - 4.375rem);
+    height: calc(6.563rem - 1.25rem);
+    bottom: max(calc((100vh - clamp(568px, 80vh, 956px)) / 2), 0px);
     position: fixed;
     z-index: 999;
+}
+
+nav .menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.438rem;
+    width: auto;
+    color: var(--pale-purple);
+    font-size: 0.938rem;
+}
+
+nav .menu-item--active {
+    text-decoration: underline var(--pale-purple);
+    text-underline-offset: 0.438rem;
+}
+
+nav .menu-item .menu-icon-container {
+    width: 1.875rem;
+    height: 1.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
