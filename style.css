@@ -61,7 +61,7 @@ h1#page-title {
 }
 
 .note-entry .note-title {
-    width: 11.875rem;
+    width: 15.625rem;
     font-size: 1.188rem;
     line-height: 1.563rem;
     padding-bottom: 0.938rem;
@@ -70,7 +70,9 @@ h1#page-title {
 .note-entry .stars {
     position: absolute;
     top: 0.938rem;
-    right: 0.938rem;
+    right: 0.563rem;
+    scale: 80%;
+    //background-color: red;
 }
 
 .note-entry .note-preview {
