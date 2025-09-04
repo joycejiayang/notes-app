@@ -121,8 +121,10 @@ nav .menu-item {
 }
 
 nav .menu-item--active {
-    text-decoration: underline var(--pale-purple) !important;
-    text-underline-offset: 0.438rem !important;
+    text-decoration: underline solid var(--pale-purple);
+    -webkit-text-decoration: underline solid var(--pale-purple);
+    text-underline-offset: 0.438rem;
+    -webkit-underline-offset: 0.438rem;
 }
 
 nav .menu-item .menu-icon-container {
