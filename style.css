@@ -24,8 +24,8 @@ body {
 
 article#screen {
     background-color: var(--pale-purple);
-    width: clamp(320px, 80vw, 440px);
-    height: clamp(568px, 80vh, 956px);
+    width: clamp(320px, 100vw, 440px);
+    height: clamp(568px, 100vh, 956px);
     display: block;
     position: absolute;
     overflow-y: scroll;
@@ -41,8 +41,8 @@ div#content * {
 
 h1#page-title {
     font-weight: 400;
-    line-height: 1.938rem;
-    font-size: 1.938rem;
+    line-height: 1.688rem;
+    font-size: 1.688rem;
     color: var(--dark-gray);
     padding-bottom: 1.25rem;
 }
@@ -61,25 +61,25 @@ h1#page-title {
 }
 
 .note-entry .note-title {
-    width: 15.625rem;
-    font-size: 1.188rem;
-    line-height: 1.563rem;
+    width: calc(100% - 1.25rem);
+    font-size: 1.063rem;
+    line-height: 1.438rem;
     padding-bottom: 0.938rem;
 }
 
 .note-entry .stars {
+    display: flex;
     position: absolute;
-    top: 0.938rem;
-    right: 0.563rem;
-    scale: 80%;
-    //background-color: red;
+    bottom: 1.063rem;
+    right: 0.938rem;
+    gap: 0.188rem;
 }
 
 .note-entry .note-preview {
     font-size: 0.938rem;
     line-height: 1.313rem;
-    width: 18.75rem;
-    max-width: calc(clamp(320px, 80vw, 440px) - 1.25rem - 1.25rem - 1.25rem - 1.25rem);
+    width: calc(100% - 1.25rem);
+    max-width: calc(clamp(320px, 100vw, 440px) - 1.25rem - 1.25rem - 1.25rem - 1.25rem);
 }
 
 .note-preview ol {
@@ -89,7 +89,7 @@ h1#page-title {
 .note-entry .time {
     font-size: 0.813rem;
     line-height: 0.813rem;
-    padding-top: 0.938rem;
+    padding-top: calc(0.938rem + (1.438rem - 1.063rem) / 2);
     color: var(--dark-gray);
 }
 
@@ -102,11 +102,11 @@ h1#page-title {
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 1.25rem 4.375rem 0;
+    padding: 1.063rem clamp(2.063rem, 16vw, 4.375rem) 0;
     background-color: var(--dark-blue);
-    width: calc(clamp(320px, 80vw, 440px) - 4.375rem - 4.375rem);
-    height: calc(6.563rem - 1.25rem);
-    bottom: max(calc((100vh - clamp(568px, 80vh, 956px)) / 2), 0px);
+    width: calc(clamp(320px, 100vw, 440px) - (clamp(2.063rem, 16vw, 4.375rem) * 2));
+    height: calc(6.563rem - 1.063rem);
+    bottom: max(calc((100vh - clamp(568px, 100vh, 956px)) / 2), 0px);
     position: fixed;
     z-index: 999;
 }
